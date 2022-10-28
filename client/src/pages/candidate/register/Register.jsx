@@ -1,0 +1,121 @@
+import React from "react";
+import { useState } from "react";
+import Girl from "../../../components/GirlLogo/Girl";
+import "./Register.css";
+import axios from "axios";
+
+export default function Register() {
+  const [inputdata, setinputdata] = useState({
+    pwd: "",
+    firstname: "",
+    lastname: "",
+    email: "",
+  });
+
+  const inputhandle = (e) => {
+    const { value, name } = e.target;
+    setinputdata({ ...inputdata, [name]: value });
+  };
+
+  const signup = async () => {
+    const { pwd, firstname, lastname, email } = inputdata;
+    if (!pwd || !firstname || !lastname || !email) {
+      alert("fill data ");
+      return;
+    }
+
+    const url = `${process.env.REACT_APP_API_KEY}/candidate/signup`;
+
+    try {
+      const { data } = await axios.post(url, {
+        pwd,
+        firstname,
+        lastname,
+        email,
+      });
+      alert(data.msg);
+      setinputdata({
+        pwd: "",
+        firstname: "",
+        lastname: "",
+        email: "",
+      });
+    } catch (error) {
+      alert(error.response.data.msg);
+    }
+
+    console.log(url);
+  };
+  return (
+    <>
+      <Girl />
+      <div className="register_container">
+        <div className="register_view"></div>
+        <div className="register_func">
+          <div className="register_form">
+            <h2>lets</h2>
+            <div className="Register_input">
+              <div className="">
+                <p>
+                  <label htmlFor="fname">first name</label>
+                </p>
+                <input
+                  type="text"
+                  name="firstname"
+                  id="fname"
+                  value={inputdata.firstname}
+                  onChange={inputhandle}
+                />
+              </div>
+              <div>
+                <div className="lastname">
+                  <div>
+                    <p>
+                      <label htmlFor="lname"> last name</label>
+                    </p>
+                    <input
+                      type="text"
+                      name="lastname"
+                      id="lname"
+                      value={inputdata.lastname}
+                      onChange={inputhandle}
+                    />
+                  </div>
+                  <p>OR</p>
+                  <div>google</div>
+                </div>
+              </div>
+              <div className="">
+                <p>
+                  <label htmlFor="email">email</label>
+                </p>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  value={inputdata.email}
+                  onChange={inputhandle}
+                />
+              </div>
+              <div className="">
+                <p>
+                  <label htmlFor="pwd"> password</label>
+                </p>
+                <input
+                  type="text"
+                  name="pwd"
+                  id="pwd"
+                  value={inputdata.pwd}
+                  onChange={inputhandle}
+                />
+              </div>
+              <div>
+                <button onClick={signup}>submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
