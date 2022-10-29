@@ -3,8 +3,10 @@ import { useState } from "react";
 import Girl from "../../../components/GirlLogo/Girl";
 import "./Register.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
+  const navigate = useNavigate();
   const [inputdata, setinputdata] = useState({
     pwd: "",
     firstname: "",
@@ -40,11 +42,11 @@ export default function Register() {
         lastname: "",
         email: "",
       });
+
+      navigate("/personal");
     } catch (error) {
       alert(error.response.data.msg);
     }
-
-    console.log(url);
   };
   return (
     <>
