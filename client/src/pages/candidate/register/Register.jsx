@@ -35,14 +35,15 @@ export default function Register() {
         lastname,
         email,
       });
-      alert(data.msg);
+
       setinputdata({
         pwd: "",
         firstname: "",
         lastname: "",
         email: "",
       });
-
+      localStorage.setItem("user", data.token);
+      alert("user signup");
       navigate("/personal");
     } catch (error) {
       alert(error.response.data.msg);

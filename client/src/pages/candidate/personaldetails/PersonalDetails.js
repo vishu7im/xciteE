@@ -12,7 +12,6 @@ const PersonalDetails = () => {
   //   navigate(`/${value}`);
   // };
 
-  }
   return (
     <div className="container-fluid main_container">
       <div className="row">
@@ -22,12 +21,7 @@ const PersonalDetails = () => {
               <div className="personal_text">XcitEducation</div>
               <div className="btn-grp mt-5">
                 <div>
-                  <button
-                    className="btn-1"
-                    onClick={() => navigateFunc("personal")}
-                  >
-                    PERSONAL DETAILS
-                  </button>
+                  <button className="btn-1">PERSONAL DETAILS</button>
                   <div className="bottom_line"></div>
                 </div>
                 <div>
