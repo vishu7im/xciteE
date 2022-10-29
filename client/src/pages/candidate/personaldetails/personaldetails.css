@@ -1,0 +1,106 @@
+.personal-page-left{
+    background-color: #F97316;
+    height:100vh;
+   
+}
+
+
+.personal_text{
+    font-family: 'Segoe UI', sans-serif ,600;
+    background-color: #374151;
+    padding:10px;
+    margin: auto;
+    color: #ffff;
+    width:55%;
+    margin-top: 50px;
+    font-weight: 700;
+    font-size:19px;
+}
+.prev_icon{
+    padding-top: 100px;
+    margin-left: 40px;
+}
+.details_text{
+    padding-top: 100px;
+  margin-left: 20px;
+    font-size: 36px;  
+    font-family: 'Segoe UI', sans-serif,400;
+                                                 
+}
+.profile_photo{
+    background-color: #F2F2F2;
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    
+}
+.pp_text{
+    position: absolute;
+    top:27px;
+    left:20px;
+    font-size: 12px;
+    color:#8F8C8C;
+    font-family: 'Segoe UI', sans-serif,400;
+                                                
+}
+.input-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius:12px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    
+}
+
+
+.text{
+   text-align: left;
+   color: #374151;
+   font-size: 22px;
+   font-weight: 400;
+}
+.radio_text{
+    padding:7px;
+}
+.btn-grp{
+
+padding-left: 59px;
+
+}
+
+.btn-1{
+    font-family: 'Segoe UI', sans-serif,400 ;
+    background-color: #F97316;
+    color: #fff;
+    padding:20px;
+    border: none;
+    font-size: 23px;
+    display: flex;
+    align-self: flex-start;
+   
+}
+.btn-next{
+    background-color: #fff;
+    border:2px solid #F97316;
+    color:#F97316;
+    padding:0px 24px;
+    font-size: 23px;
+    font-weight:600;
+    border-radius: 22px;
+    font-family: 'Segoe UI', sans-serif,400 ;
+}
+.clear{
+    clear:both;
+}
+
+
+
