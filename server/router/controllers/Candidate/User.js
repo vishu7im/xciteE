@@ -19,9 +19,9 @@ const signup = async (req, res) => {
   try {
     const result = await user.save();
     let token = jwt.sign({ id: result._id }, secret_key);
-    res.status(200).json({ data: "user register successfully", token: token });
+    res.status(200).json({ msg: "user register successfully", token: token });
   } catch (error) {
-    res.status(404).json(error.message);
+    res.status(402).json({ data: error.message, msg: "duplicate" });
   }
 };
 
