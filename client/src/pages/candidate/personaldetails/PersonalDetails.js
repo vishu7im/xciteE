@@ -21,7 +21,12 @@ const PersonalDetails = () => {
               <div className="personal_text">XcitEducation</div>
               <div className="btn-grp mt-5">
                 <div>
-                  <button className="btn-1">PERSONAL DETAILS</button>
+                  <button
+                    className="btn-1"
+                    onClick={() => navigate("/register")}
+                  >
+                    PERSONAL DETAILS
+                  </button>
                   <div className="bottom_line"></div>
                 </div>
                 <div>
