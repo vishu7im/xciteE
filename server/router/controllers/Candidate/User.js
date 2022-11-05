@@ -51,7 +51,7 @@ const login = async (req, res) => {
 const fetchUserData = async (req, res) => {
   //code for fetch user data
   try {
-    const user = await User.find({ _id: req.userid });
+    const user = await User.findOne({ _id: req.userid });
 
     res.status(200).json(user);
   } catch (error) {

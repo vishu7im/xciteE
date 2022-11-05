@@ -1,13 +1,64 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./personaldetails.css";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { useNavigate } from "react-router-dom";
 import Arrow from "../../../Assets/previousicon.png";
+import { AuthContext } from "../../../context/AuthContext";
 
 const PersonalDetails = () => {
   const navigate = useNavigate();
+
+  const { user } = AuthContext();
+  const [input, setinput] = useState({
+    contact: "",
+    DOB: "",
+    gender: "",
+    city: "",
+    pincode: "",
+    country: "",
+    userProfile: "",
+  });
+
+  const handleInput = (e) => {
+    const { value, name } = e.target;
+    setinput({ ...input, [name]: value });
+  };
+
+  const submitData = async () => {
+    const { contact, DOB, gender, city, pincode, country, userProfile } = input;
+    if (!contact || !DOB || !gender || !city || !pincode || !country) {
+      alert("fill data");
+      return;
+    }
+
+    const url = `${process.env.REACT_APP_API_KEY}/candidate/personalDetail`;
+    try {
+      const { data } = await axios.post(url, {
+        contact,
+        DOB,
+        gender,
+        city,
+        pincode,
+        country,
+        userProfile,
+      });
+      setinput({
+        contact: "",
+        DOB: "",
+        gender: "",
+        city: "",
+        pincode: "",
+        country: "",
+        userProfile: "",
+      });
+    } catch (error) {
+      alert(error.response.data.msg);
+    }
+  };
+
   // const navigateFunc = (value) => {
   //   navigate(`/${value}`);
   // };
@@ -64,13 +115,21 @@ const PersonalDetails = () => {
             <div className="col-lg-3">
               <div className="input_div">
                 <div className="text">First Name</div>
-                <input type="text" className="form-control form" />
+                <input
+                  type="text"
+                  className="form-control form"
+                  value={user.firstname}
+                />
               </div>
             </div>
             <div className="col-lg-3">
               <div className="input_div">
                 <div className="text">Last Name</div>
-                <input type="text" className="form-control last-name" />
+                <input
+                  type="text"
+                  className="form-control last-name"
+                  value={user.lastname}
+                />
               </div>
             </div>
             <div className="col-lg-2">
@@ -86,11 +145,21 @@ const PersonalDetails = () => {
               <div className="col-lg-2"></div>
               <div className="col-lg-4">
                 <div className="text">Email</div>
-                <input type="email" className="form-control" />
+                <input
+                  type="email"
+                  className="form-control"
+                  value={user.email}
+                />
               </div>
               <div className="col-lg-3">
                 <div className="text">Contact</div>
-                <input type="number" className="form-control" />
+                <input
+                  type="number"
+                  name="contact"
+                  className="form-control"
+                  onChange={handleInput}
+                  value={input.contact}
+                />
               </div>
 
               <div className="col-lg-4"></div>
@@ -99,17 +168,24 @@ const PersonalDetails = () => {
               <div className="col-lg-2"></div>
               <div className="col-lg-4">
                 <div className="text">Date of birth</div>
-                <input type="email" className="form-control" />
+                <input
+                  type="email"
+                  className="form-control"
+                  name="DOB"
+                  value={input.DOB}
+                  onChange={handleInput}
+                />
               </div>
               <div className="col-lg-4">
                 <div className="text">Gender</div>
                 <RadioGroup
                   row
                   aria-labelledby="demo-row-radio-buttons-group-label"
-                  name="row-radio-buttons-group"
+                  name="gender"
+                  onChange={handleInput}
                 >
                   <FormControlLabel
-                    value="female"
+                    value="Male"
                     control={<Radio />}
                     label="Male"
                   />
@@ -132,11 +208,23 @@ const PersonalDetails = () => {
               <div className="col-lg-2"></div>
               <div className="col-lg-3">
                 <div className="text">City</div>
-                <input type="email" className="form-control" />
+                <input
+                  type="email"
+                  className="form-control"
+                  name="city"
+                  value={input.city}
+                  onChange={handleInput}
+                />
               </div>
               <div className="col-lg-3">
                 <div className="text">Pincode</div>
-                <input type="number" className="form-control" />
+                <input
+                  type="number"
+                  className="form-control"
+                  name="pincode"
+                  value={input.pincode}
+                  onChange={handleInput}
+                />
               </div>
 
               <div className="col-lg-4"></div>
@@ -146,14 +234,22 @@ const PersonalDetails = () => {
               <div className="col-lg-2"></div>
               <div className="col-lg-3">
                 <div className="text">Country</div>
-                <input type="text" className="form-control" />
+                <input
+                  type="text"
+                  className="form-control"
+                  name="country"
+                  value={input.country}
+                  onChange={handleInput}
+                />
               </div>
               <div className="col-lg-7"></div>
             </div>
             <div className="row">
               <div className="col-lg-2"></div>
               <div className="col-lg-10">
-                <button className="btn-next">next</button>
+                <button className="btn-next" onClick={submitData}>
+                  next
+                </button>
               </div>
             </div>
           </div>
