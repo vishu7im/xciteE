@@ -27,7 +27,6 @@ export default function Register() {
     }
 
     const url = `${process.env.REACT_APP_API_KEY}/candidate/signup`;
-
     try {
       const { data } = await axios.post(url, {
         pwd,
