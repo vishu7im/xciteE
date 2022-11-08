@@ -23,7 +23,7 @@ router.post("/signup", signup);
 router.post("/login", login);
 
 //api for persnoal details
-router.post("/personalDetail", personalDetail);
+router.post("/personalDetail", auth, personalDetail);
 
 //api for education
 router.post("/education", auth, education);
