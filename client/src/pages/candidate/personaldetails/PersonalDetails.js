@@ -11,7 +11,7 @@ import { AuthContext } from "../../../context/AuthContext";
 const PersonalDetails = () => {
   const navigate = useNavigate();
 
-  const { user } = AuthContext();
+  const { user, token } = AuthContext();
   const [input, setinput] = useState({
     contact: "",
     DOB: "",
@@ -36,15 +36,23 @@ const PersonalDetails = () => {
 
     const url = `${process.env.REACT_APP_API_KEY}/candidate/personalDetail`;
     try {
-      const { data } = await axios.post(url, {
-        contact,
-        DOB,
-        gender,
-        city,
-        pincode,
-        country,
-        userProfile,
-      });
+      const { data } = await axios.post(
+        url,
+        {
+          contact,
+          DOB,
+          gender,
+          city,
+          pincode,
+          country,
+          userProfile,
+        },
+        {
+          headers: {
+            token: token,
+          },
+        }
+      );
       setinput({
         contact: "",
         DOB: "",
