@@ -6,6 +6,7 @@ import Register from "./pages/candidate/register/Register";
 import Home from "./pages/Home/Home";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Education from "./pages/candidate/education/Education";
+import WorkExperience from "./pages/candidate/workexperience/Workexperience";
 
 export default function App() {
   const { user } = AuthContext();
@@ -30,6 +31,15 @@ export default function App() {
           element={
             <ProtectedRoute user={user}>
               <Education />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          exact
+          path="/workexperience"
+          element={
+            <ProtectedRoute user={user}>
+              <WorkExperience />
             </ProtectedRoute>
           }
         />
