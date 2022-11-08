@@ -63,7 +63,7 @@ const fetchUserData = async (req, res) => {
 const personalDetail = async (req, res) => {
   // code for persnoal detail
 
-  const { contact, DOB, gender, city, pincode, state, country, userProfile } =
+  const { contact, DOB, gender, city, pincode, country, userProfile } =
     req.body;
 
   try {
@@ -74,12 +74,11 @@ const personalDetail = async (req, res) => {
         Gender: gender,
         City: city,
         Pincode: pincode,
-        State: state,
         Country: country,
         UserProfile: userProfile,
       },
     });
-
+    console.log(req.userid);
     res.status(200).json({ msg: "data added!" });
   } catch (error) {
     res.status(400).json({ msg: error.message });

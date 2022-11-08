@@ -5,6 +5,7 @@ const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setuser] = useState(localStorage.getItem("user"));
+  const [token, settoken] = useState(localStorage.getItem("user"));
 
   const fetchUserdata = async (token) => {
     const url = `${process.env.REACT_APP_API_KEY}/candidate/fetchuserdata`;
@@ -25,7 +26,9 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ user, token }}>
+      {children}
+    </UserContext.Provider>
   );
 };
 
