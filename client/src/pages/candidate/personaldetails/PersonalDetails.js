@@ -13,6 +13,9 @@ const PersonalDetails = () => {
 
   const { user, token } = AuthContext();
   const [input, setinput] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
     contact: "",
     DOB: "",
     gender: "",
@@ -53,6 +56,7 @@ const PersonalDetails = () => {
           },
         }
       );
+      console.log(token);
       setinput({
         contact: "",
         DOB: "",
@@ -62,10 +66,27 @@ const PersonalDetails = () => {
         country: "",
         userProfile: "",
       });
+      navigate("/education");
     } catch (error) {
+      console.log(token);
       alert(error.response.data.msg);
     }
   };
+
+  useEffect(() => {
+    setinput({
+      firstname: user.firstname,
+      lastname: user.lastname,
+      email: user.email,
+      contact: "",
+      DOB: "",
+      gender: "",
+      city: "",
+      pincode: "",
+      country: "",
+      userProfile: "",
+    });
+  }, [user]);
 
   // const navigateFunc = (value) => {
   //   navigate(`/${value}`);
@@ -126,7 +147,7 @@ const PersonalDetails = () => {
                 <input
                   type="text"
                   className="form-control form"
-                  value={user.firstname}
+                  value={input.firstname}
                 />
               </div>
             </div>
@@ -136,7 +157,7 @@ const PersonalDetails = () => {
                 <input
                   type="text"
                   className="form-control last-name"
-                  value={user.lastname}
+                  value={input.lastname}
                 />
               </div>
             </div>
@@ -156,7 +177,7 @@ const PersonalDetails = () => {
                 <input
                   type="email"
                   className="form-control"
-                  value={user.email}
+                  value={input.email}
                 />
               </div>
               <div className="col-lg-3">

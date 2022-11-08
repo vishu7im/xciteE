@@ -4,11 +4,11 @@ import { createContext, useContext, useEffect, useState } from "react";
 const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
-  const [user, setuser] = useState(localStorage.getItem("user"));
+  const [user, setuser] = useState({});
   const [token, settoken] = useState(localStorage.getItem("user"));
 
   const fetchUserdata = async (token) => {
-    const url = `${process.env.REACT_APP_API_KEY}/candidate/fetchuserdata`;
+    const url = `${process.env.REACT_APP_API_KEY}/candidate/fetchuserdata/`;
     try {
       const { data } = await axios.get(url, {
         headers: {

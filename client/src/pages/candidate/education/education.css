@@ -1,0 +1,61 @@
+.education-page-left{
+    background-color: #F97316;
+    height:100vh;
+    width:250px;
+}
+.edu_div{
+    
+    width:80%;
+    margin-bottom: 30px;
+}
+
+.education_text{
+    font-family: 'Segoe UI', sans-serif, 400;
+    background-color: #374151;
+    padding:10px;
+    margin: auto;
+    color: #ffff;
+    width:55%;
+    margin-top: 50px;
+    font-weight: 700;
+    font-size:19px;
+}
+.btn_school{
+    background-color:#ffff;
+    color: #F97316;
+    border: none;
+    text-decoration: underline;
+    font-weight: 600;
+    word-spacing: 2px;
+    letter-spacing:1px;
+}
+.btn-edu-next{
+    background-color: #fff;
+    border:2px solid #F97316;
+    color:#F97316;
+    padding:0px 24px;
+    font-size: 23px;
+    font-weight:600;
+    border-radius: 22px;
+    margin-top: 50px;
+    font-family: 'Segoe UI', sans-serif, 400;
+    
+}
+.text-edu{
+    text-align: left;
+    color: #374151;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'Segoe UI', sans-serif, 400;
+                                                
+ }
+.edu_text{
+    padding-top: 100px;
+    margin-left: 40px;
+    font-size: 36px;  
+    font-family: 'Segoe UI', sans-serif, 400; 
+}
+.prev_icon{
+    padding-top: 100px;
+    margin-left: 40px;
+}
