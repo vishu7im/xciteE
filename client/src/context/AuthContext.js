@@ -8,6 +8,7 @@ export const AuthContextProvider = ({ children }) => {
   const [token, settoken] = useState(localStorage.getItem("user"));
 
   const fetchUserdata = async (token) => {
+    console.log("iam run");
     const url = `${process.env.REACT_APP_API_KEY}/candidate/fetchuserdata/`;
     try {
       const { data } = await axios.get(url, {
@@ -20,9 +21,7 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const data = localStorage.getItem("user");
-
-    fetchUserdata(data);
+    fetchUserdata(token);
   }, []);
 
   return (
