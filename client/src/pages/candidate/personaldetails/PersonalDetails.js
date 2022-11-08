@@ -13,9 +13,6 @@ const PersonalDetails = () => {
 
   const { user, token } = AuthContext();
   const [input, setinput] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
     contact: "",
     DOB: "",
     gender: "",
@@ -56,7 +53,7 @@ const PersonalDetails = () => {
           },
         }
       );
-      console.log(token);
+
       setinput({
         contact: "",
         DOB: "",
@@ -68,16 +65,16 @@ const PersonalDetails = () => {
       });
       navigate("/education");
     } catch (error) {
-      console.log(token);
       alert(error.response.data.msg);
     }
   };
 
   useEffect(() => {
+    const { firstname, lastname, email } = user;
     setinput({
-      firstname: user.firstname,
-      lastname: user.lastname,
-      email: user.email,
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
       contact: "",
       DOB: "",
       gender: "",
