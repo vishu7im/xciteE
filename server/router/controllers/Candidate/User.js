@@ -167,13 +167,13 @@ const skills = async (req, res) => {
 //controller for ProfileLink
 const ProfileLink = async (req, res) => {
   // code for ProfileLink
-  const { linkedin, binance, protfolio } = req.body;
+  const { linkedin, binance, portfolio } = req.body;
   try {
     const data = await User.findByIdAndUpdate(req.userid, {
       ProfileLink: {
         Linkdin: linkedin,
         Binance: binance,
-        Protfolio: protfolio,
+        Portfolio: portfolio,
       },
     });
     res.status(200).json({ msg: "data added!" });

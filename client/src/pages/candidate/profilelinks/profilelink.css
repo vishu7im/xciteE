@@ -1,0 +1,41 @@
+.in_icon{
+    font-size: 30px;
+    display: flex;
+   align-items:center ;
+
+}
+.profile_text1{
+    
+        padding-top: 100px;
+        margin-left: -80px;
+        font-size: 36px;  
+        font-family: 'Segoe UI', sans-serif,400;
+                                                     
+
+}
+.links_div{
+  margin-left: 100px;
+  margin-bottom: 30px;
+}
+.link_text{
+    font-size: 20px;
+   margin-top: 10px;
+   padding-left: 12px;
+}
+.btn_done{
+    text-align: right;
+    
+}
+.btn_text{
+    padding:2px 29px;
+    border: 3px solid #F97316;
+    color: #F97316;
+    font-size: 22px;
+    background-color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 600px;
+    border-radius: 30px;
+    
+   
+  
+}
