@@ -53,8 +53,7 @@ const WorkExperience = () => {
     }
   };
   const goToNext = () => {
-    submit();
-    navigate("/");
+    navigate("/certification");
   };
   return (
     <div className="container-fluid main_container">
@@ -90,7 +89,11 @@ const WorkExperience = () => {
         <div className="col-lg-8">
           <div className="row">
             <div className="col-lg-1 prev_icon">
-              <img src={Arrow} alt="arrow" />
+              <img
+                src={Arrow}
+                alt="arrow"
+                onClick={() => navigate("/education")}
+              />
             </div>
             <div className="col-lg-7 add_ur_work_text">
               Add your work experience
@@ -185,7 +188,7 @@ const WorkExperience = () => {
               <div className="col-lg-7"></div>
               <div className="col-lg-2">
                 <button className="btn-edu-next" onClick={goToNext}>
-                  next
+                  Next
                 </button>
               </div>
             </div>

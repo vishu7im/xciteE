@@ -3,7 +3,7 @@ import { useState } from "react";
 import Girl from "../../../components/GirlLogo/Girl";
 import "./Register.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -113,6 +113,11 @@ export default function Register() {
               </div>
               <div>
                 <button onClick={signup}>submit</button>
+              </div>
+              <div>
+                <h6>
+                  Already have an account ? <Link to="/loginprompt">login</Link>
+                </h6>
               </div>
             </div>
           </div>

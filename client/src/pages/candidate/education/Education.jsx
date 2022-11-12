@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 
 const Education = () => {
-  let r = 0;
   const { token } = AuthContext();
   const navigate = useNavigate();
   const [educationData, seteducationData] = useState({
@@ -48,20 +47,14 @@ const Education = () => {
         year: "",
         collage: "",
       });
-      r = 1;
+
       alert("one school added");
     } catch (error) {
       alert(error.response.data.msg);
     }
   };
   const submitNext = () => {
-    debugger;
-    submitEducationData();
-    if (r === 1) {
-      navigate("/workexperience");
-    } else {
-      return;
-    }
+    navigate("/workexperience");
   };
   return (
     <div className="container-fluid main_container">
@@ -98,7 +91,11 @@ const Education = () => {
         <div className="col-lg-8">
           <div className="row">
             <div className="col-lg-1 prev_icon">
-              <img src={Arrow} alt="arrow" />
+              <img
+                src={Arrow}
+                alt="arrow"
+                onClick={() => navigate("/personal")}
+              />
             </div>
             <div className="col-lg-7 edu_text">
               Add your educational details

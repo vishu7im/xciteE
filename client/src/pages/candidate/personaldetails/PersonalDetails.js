@@ -7,6 +7,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import { useNavigate } from "react-router-dom";
 import Arrow from "../../../Assets/previousicon.png";
 import { AuthContext } from "../../../context/AuthContext";
+import FileBase from "react-file-base64";
 
 const PersonalDetails = () => {
   const navigate = useNavigate();
@@ -129,7 +130,11 @@ const PersonalDetails = () => {
         <div className="col-lg-8">
           <div className="row">
             <div className="col-lg-1 prev_icon">
-              <img src={Arrow} alt="arrow" />
+              <img
+                src={Arrow}
+                alt="arrow"
+                onClick={() => navigate("/register")}
+              />
             </div>
             <div className="col-lg-5 details_text">
               Add your personal details
@@ -161,7 +166,13 @@ const PersonalDetails = () => {
             <div className="col-lg-2">
               <div className="profile_photo">
                 <p className="pp_text">
-                  Add A profile
+                  <FileBase
+                    className={"filebase"}
+                    multiple={false}
+                    onDone={({ base64 }) => {
+                      setinput({ ...input, userProfile: base64 });
+                    }}
+                  />
                   <br /> Photo
                 </p>
               </div>
@@ -195,7 +206,7 @@ const PersonalDetails = () => {
               <div className="col-lg-4">
                 <div className="text">Date of birth</div>
                 <input
-                  type="email"
+                  type="date"
                   className="form-control"
                   name="DOB"
                   value={input.DOB}

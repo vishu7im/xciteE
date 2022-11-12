@@ -1,0 +1,86 @@
+
+.skills_input{
+   
+    height: 50px;
+    border: 1px solid rgb(227, 220, 220);
+    border-radius: 12px;
+   display: flex;
+   
+
+}
+.certification-page-left{
+    background-color: #F97316;
+    height:100vh;
+   
+}
+.search2_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+.skills_text{
+    background-color: #ddd7d7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   padding: 10px 20px;
+    border-radius:50px;
+    
+    margin: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.skills_div{
+ 
+    margin-left: 300px;
+}
+.bottom_line{
+    border: 1px solid #ffff;
+    margin-right: 60px;
+}
+
+.div_skills{
+    display: flex;
+
+}
+
+.text_python{
+
+margin-top: 20px;
+}
+.search_bar{
+    width:90%;
+    border: none;
+    padding-left: 12px;
+}
+
+
+.certificate_text{
+   
+    background-color: #374151;
+    padding:10px;
+    margin: auto;
+    color: #ffff;
+    width:55%;
+    margin-top: 50px;
+    font-weight: 700;
+    font-size:25px;
+}
+.text-cert{
+    
+        text-align: left;
+        color: #374151;
+        font-size: 20px;
+        font-weight: 400;
+    
+
+}
+.add_ur_cert_text{
+
+        padding-top: 100px;
+        margin-left: 70px;
+        font-size: 36px; 
+          
+    
+}

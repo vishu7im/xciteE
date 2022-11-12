@@ -1,0 +1,107 @@
+.main-page-left{
+    background-color: #F97316;
+    height:100vh;
+    width:30%;
+}
+.main-page-right{
+   
+    height:100vh;
+    
+}
+.main_container{
+padding-left: 0 !important;
+}
+.main_text{
+    margin-top: 60px;
+    background-color: #374151;
+    padding:8px;
+    margin-left: 60px;
+    color: #ffff;
+    width:50%;
+    font-weight: 700;
+    font-size:19px
+}
+.mainpage_img{
+    padding-top: 100px;
+   margin-left: 120px;
+}
+.mainmenu_div{
+    margin-top: 100px;
+}
+.register_btn{
+    background-color: #ffff;
+    border:1px solid #F97316;
+    border-radius:40px;
+    padding:3px 10px;
+}
+.login_btn{
+    color:#F97316;
+    font-size: 20px;
+    font-weight:500;
+}
+.line_btn{
+    border-left:2px solid #2F2E41;
+}
+.employers_btn{
+    color:#3F3D56;
+    font-size: 20px;
+}
+.center_div{
+    padding-top: 120px;
+}
+.text1{
+    font-size: 48px;
+    margin-left:-90px;
+    line-height: 80px;
+color:#2F2E41
+}
+
+.text2{
+    color:
+    #3F3D56;
+   font-size:20px;
+   text-align: justify;
+   margin-left:20px;
+
+  
+}
+
+
+.location_input{
+    background-color:#e8e6e6;    
+    border-radius: 20px;
+    padding:6px;
+    font-size: 16px;
+    color:#8F8C8C;
+    border:none;
+    padding: 10px;
+   
+}
+.location_input:focus{
+    outline: none;
+}
+    .location_main_input{
+        background-color:#e8e6e6;
+        width:330px;
+        border-radius: 20px;
+        margin-left:32px;
+}
+.location_img{
+    margin-left: 30px;
+}
+
+.searchbtn{
+    padding-top: 40px;
+    padding-left:310px;
+    
+
+}
+.search_btn{
+    color:#ffff;
+    background-color: #F97316;
+    padding: 5px 22px;
+    border-radius: 42px;
+    border: none;
+  
+   
+}
