@@ -56,7 +56,7 @@ const ProfileLinks = () => {
     <div className="container-fluid main_container">
       <div className="row">
         <div className="col-lg-3 certification-page-left">
-          <Navbar />
+          <Navbar status={"Link"} />
         </div>
         <div className="col-lg-9">
           <div className="row ">
