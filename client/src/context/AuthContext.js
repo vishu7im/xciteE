@@ -15,8 +15,20 @@ export const AuthContextProvider = ({ children }) => {
           token: token,
         },
       });
-      setuser(data);
-    } catch (error) {}
+      setuser({ ...data, validation: true });
+    } catch (error) {
+      setuser({
+        _id: "",
+        firstname: "",
+        lastname: "",
+        email: "",
+        pwd: "",
+        WorkExperience: [],
+        Skills: [],
+        Education: [],
+        Certificate: [],
+      });
+    }
   };
 
   useEffect(() => {
@@ -24,7 +36,7 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, token }}>
+    <UserContext.Provider value={{ user, token, fetchUserdata }}>
       {children}
     </UserContext.Provider>
   );
