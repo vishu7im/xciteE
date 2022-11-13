@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Arrow from "../../../Assets/previousicon.png";
 import Orange from "../../../Assets/orange_search_bar.png";
+import Navbar from "../../../components/navbar/Navbar";
 
 const Skills = () => {
   const navigate = useNavigate();
@@ -11,32 +12,7 @@ const Skills = () => {
     <div className="container-fluid main_container">
       <div className="row">
         <div className="col-lg-3 certification-page-left">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="certificate_text">XcitEducation</div>
-              <div className="btn-grp mt-5">
-                <div>
-                  <button className="btn-1">PERSONAL DETAILS</button>
-                </div>
-                <div>
-                  <button className="btn-1">EDUCATION</button>
-                </div>
-                <div>
-                  <button className="btn-1">WORK EXPERIENCE</button>
-                </div>
-                <div>
-                  <button className="btn-1">CERTIFICATIONS</button>
-                </div>
-                <div>
-                  <button className="btn-1">SKILLS</button>
-                  <div className="bottom_line"></div>
-                </div>
-                <div>
-                  <button className="btn-1">PROFILE LINKS</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Navbar />
         </div>
         <div className="col-lg-8">
           <div className="row">

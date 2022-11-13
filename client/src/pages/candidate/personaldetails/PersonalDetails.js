@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Arrow from "../../../Assets/previousicon.png";
 import { AuthContext } from "../../../context/AuthContext";
 import FileBase from "react-file-base64";
+import Navbar from "../../../components/navbar/Navbar";
 
 const PersonalDetails = () => {
   const navigate = useNavigate();
@@ -94,37 +95,7 @@ const PersonalDetails = () => {
     <div className="container-fluid main_container">
       <div className="row">
         <div className="col-lg-3 personal-page-left">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="personal_text">XcitEducation</div>
-              <div className="btn-grp mt-5">
-                <div>
-                  <button
-                    className="btn-1"
-                    onClick={() => navigate("/register")}
-                  >
-                    PERSONAL DETAILS
-                  </button>
-                  <div className="bottom_line"></div>
-                </div>
-                <div>
-                  <button className="btn-1">EDUCATION</button>
-                </div>
-                <div>
-                  <button className="btn-1">WORK EXPERIENCE</button>
-                </div>
-                <div>
-                  <button className="btn-1">CERTIFICATIONS</button>
-                </div>
-                <div>
-                  <button className="btn-1">SKILLS</button>
-                </div>
-                <div>
-                  <button className="btn-1">PROFILE LINKS</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Navbar />
         </div>
 
         <div className="col-lg-8">

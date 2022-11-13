@@ -5,6 +5,7 @@ import Arrow from "../../../Assets/previousicon.png";
 import Plus from "../../../Assets/plus.png";
 import { AuthContext } from "../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../../components/navbar/Navbar";
 
 const WorkExperience = () => {
   const navigate = useNavigate();
@@ -59,32 +60,7 @@ const WorkExperience = () => {
     <div className="container-fluid main_container">
       <div className="row">
         <div className="col-lg-3 work-page-left">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="work_text">XcitEducation</div>
-              <div className="btn-grp mt-5">
-                <div>
-                  <button className="btn-1">PERSONAL DETAILS</button>
-                </div>
-                <div>
-                  <button className="btn-1">EDUCATION</button>
-                </div>
-                <div>
-                  <button className="btn-1">WORK EXPERIENCE</button>
-                  <div className="bottom_line"></div>
-                </div>
-                <div>
-                  <button className="btn-1">CERTIFICATIONS</button>
-                </div>
-                <div>
-                  <button className="btn-1">SKILLS</button>
-                </div>
-                <div>
-                  <button className="btn-1">PROFILE LINKS</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Navbar />
         </div>
         <div className="col-lg-8">
           <div className="row">
