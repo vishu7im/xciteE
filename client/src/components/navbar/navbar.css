@@ -1,58 +1,50 @@
-.personal-page-left{
-    background-color: #F97316;
-    height:100vh;
-   
+.personal-page-left {
+  background-color: #f97316;
+  height: 100vh;
 }
 
-
-.personal_text{
-    font-family: 'Segoe UI', sans-serif ,600;
-    background-color: #374151;
-    padding:10px;
-    margin: auto;
-    color: #ffff;
-    width:55%;
-    margin-top: 50px;
-    font-weight: 700;
-    font-size:19px;
+.personal_text {
+  font-family: "Segoe UI", sans-serif, 600;
+  background-color: #374151;
+  padding: 10px;
+  margin: auto;
+  color: #ffff;
+  width: 55%;
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 19px;
 }
 
-
-
-
-
-
-
-.btn-grp{
-
-padding-left: 59px;
-
+.btn-grp {
+  padding-left: 59px;
 }
 
-.btn-1{
-    font-family: 'Segoe UI', sans-serif,400 ;
-    background-color: #F97316;
-    color: #fff;
-    padding:20px;
-    border: none;
-    font-size: 23px;
-    display: flex;
-    align-self: flex-start;
-   
+.btn-1 {
+  font-family: "Segoe UI", sans-serif, 400;
+  background-color: #f97316;
+  color: #fff;
+  padding: 20px;
+  border: none;
+  font-size: 23px;
+  display: flex;
+  align-self: flex-start;
+  text-decoration: none;
 }
-.btn-next{
-    background-color: #fff;
-    border:2px solid #F97316;
-    color:#F97316;
-    padding:0px 24px;
-    font-size: 23px;
-    font-weight:600;
-    border-radius: 22px;
-    font-family: 'Segoe UI', sans-serif,400 ;
+.btn-next {
+  background-color: #fff;
+  border: 2px solid #f97316;
+  color: #f97316;
+  padding: 0px 24px;
+  font-size: 23px;
+  font-weight: 600;
+  border-radius: 22px;
+  font-family: "Segoe UI", sans-serif, 400;
 }
-.clear{
-    clear:both;
+.clear {
+  clear: both;
 }
 
-
-
+.active {
+  color: #c4ee0a;
+  font-weight: 900;
+}
