@@ -60,7 +60,7 @@ const WorkExperience = () => {
     <div className="container-fluid main_container">
       <div className="row">
         <div className="col-lg-3 work-page-left">
-          <Navbar />
+          <Navbar status={"Exp"} />
         </div>
         <div className="col-lg-8">
           <div className="row">
