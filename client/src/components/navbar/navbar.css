@@ -45,6 +45,7 @@
 }
 
 .active {
-  color: #c4ee0a;
-  font-weight: 900;
+  color:#fff;
+  font-weight:400;
+  text-decoration: underline;
 }

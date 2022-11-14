@@ -1,11 +1,11 @@
-import React from "react";
-import { useState } from "react";
-import Girl from "../../../components/GirlLogo/Girl";
+import React, { useState } from "react";
 import "./Register.css";
-import axios from "axios";
+import Girl from "../../../Assets/mainpage.png";
+import "./Register.css";
+import { FcGoogle } from "react-icons/fc";
 import { useNavigate, Link } from "react-router-dom";
-
-export default function Register() {
+import axios from "axios";
+const Register = () => {
   const navigate = useNavigate();
   const [inputdata, setinputdata] = useState({
     pwd: "",
@@ -48,81 +48,120 @@ export default function Register() {
       alert(error.response.data.msg);
     }
   };
+
   return (
-    <>
-      <Girl />
-      <div className="register_container">
-        <div className="register_view"></div>
-        <div className="register_func">
-          <div className="register_form">
-            <h2>lets</h2>
-            <div className="Register_input">
-              <div className="">
-                <p>
-                  <label htmlFor="fname">first name</label>
-                </p>
-                <input
-                  type="text"
-                  name="firstname"
-                  id="fname"
-                  value={inputdata.firstname}
-                  onChange={inputhandle}
-                />
-              </div>
-              <div>
-                <div className="lastname">
-                  <div>
-                    <p>
-                      <label htmlFor="lname"> last name</label>
-                    </p>
-                    <input
-                      type="text"
-                      name="lastname"
-                      id="lname"
-                      value={inputdata.lastname}
-                      onChange={inputhandle}
-                    />
-                  </div>
-                  <p>OR</p>
-                  <div>google</div>
-                </div>
-              </div>
-              <div className="">
-                <p>
-                  <label htmlFor="email">email</label>
-                </p>
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  value={inputdata.email}
-                  onChange={inputhandle}
-                />
-              </div>
-              <div className="">
-                <p>
-                  <label htmlFor="pwd"> password</label>
-                </p>
-                <input
-                  type="text"
-                  name="pwd"
-                  id="pwd"
-                  value={inputdata.pwd}
-                  onChange={inputhandle}
-                />
-              </div>
-              <div>
-                <button onClick={signup}>submit</button>
-              </div>
-              <div>
-                <h6>
-                  Already have an account ? <Link to="/loginprompt">login</Link>
-                </h6>
-              </div>
+    <div className="container-fluid main_container">
+      <div className="row">
+        <div className="col-lg-4 register-page-left">
+          <div className="row">
+            <div className="col-lg-8">
+              <div className="main_text">XcitEducation</div>
+            </div>
+            <div className="col-lg-4"></div>
+          </div>
+          <div className="row">
+            <div className="col-lg-12 registerpage_img">
+              <img src={Girl} style={{ width: "450px" }} />
             </div>
           </div>
         </div>
+
+        <div className="col-lg-8">
+          <div className="row">
+            <div className="col-lg-1"></div>
+            <div className="col-lg-6 text_started">Let’s get started.</div>
+            <div className="col-lg-5"></div>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-1"></div>
+            <div className="col-lg-4 input_first">
+              <div className="first_name"> First Name</div>
+
+              <input
+                className="form-control"
+                type="text"
+                name="firstname"
+                id="fname"
+                value={inputdata.firstname}
+                onChange={inputhandle}
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-4">
+              <div className="last_name"> Last Name</div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-1"></div>
+            <div className="col-lg-4 lastname_text_input">
+              <input
+                className="form-control"
+                type="text"
+                name="lastname"
+                id="lname"
+                value={inputdata.lastname}
+                onChange={inputhandle}
+              />
+            </div>
+            <div className="col-lg-1 div_or">OR</div>
+            <div className="col-lg-3">
+              <button className="google_btn">
+                Sign Up with Google
+                <span className="google_icon">
+                  <FcGoogle />
+                </span>
+              </button>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-1"></div>
+            <div className="col-lg-4 input_first">
+              <div className="Email_name"> Email</div>
+
+              <input
+                className="form-control"
+                type="text"
+                name="email"
+                id="email"
+                value={inputdata.email}
+                onChange={inputhandle}
+              />
+            </div>
+            <div className="col-lg-1"></div>
+            <div className="col-lg-2"></div>
+          </div>
+          <div className="row">
+            <div className="col-lg-1"></div>
+            <div className="col-lg-4 input_first">
+              <div className="first_name"> Password</div>
+              <input
+                className="form-control"
+                type="text"
+                name="pwd"
+                id="pwd"
+                value={inputdata.pwd}
+                onChange={inputhandle}
+              />
+            </div>
+
+            <div className="col-lg-1"></div>
+            <div className="col-lg-2"></div>
+          </div>
+          <div className="row btn_row">
+            <button
+              className="signup_btn mt-5"
+              style={{ width: "100px" }}
+              onClick={signup}
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
-}
+};
+export default Register;
