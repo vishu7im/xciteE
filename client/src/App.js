@@ -13,7 +13,7 @@ import ProfileLinks from "./pages/candidate/profilelinks/Profilelinks";
 import LoginPrompt from "./pages/candidate/loginprompt/Loginprompt";
 import Mainpage from "./pages/candidate/mainpage/Mainpage";
 import Navbar from "./components/navbar/Navbar";
-import Autocomplete from "./components/test2";
+import Landingpage from "./pages/candidate/LandingPage/Landingpage";
 
 export default function App() {
   const { user } = AuthContext();
@@ -76,6 +76,15 @@ export default function App() {
           element={
             <ProtectedRoute user={user}>
               <ProfileLinks />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          exact
+          path="/landing"
+          element={
+            <ProtectedRoute user={user}>
+              <Landingpage />
             </ProtectedRoute>
           }
         />

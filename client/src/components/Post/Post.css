@@ -1,0 +1,26 @@
+.Card_container {
+  border: 2px solid rgb(0, 0, 0);
+  height: 300px;
+  border-radius: 8px;
+  margin: 2%;
+}
+
+.Post_title {
+  height: 30%;
+  border: 2px solid gray;
+  display: flex;
+  justify-content: space-between;
+}
+.Post_Des {
+  height: 40%;
+  border: 2px solid gray;
+}
+.Post_tag {
+  height: 10%;
+  border: 2px solid gray;
+}
+
+.Post_submit {
+  height: 20%;
+  border: 2px solid gray;
+}

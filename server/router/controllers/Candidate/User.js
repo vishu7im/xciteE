@@ -152,8 +152,9 @@ const certificate = async (req, res) => {
 const skills = async (req, res) => {
   // code for skills
   const { skills } = req.body;
+
   try {
-    const data = await User.findByIdAndUpdate(req.userid, {
+    await User.findByIdAndUpdate(req.userid, {
       $addToSet: {
         Skills: skills,
       },

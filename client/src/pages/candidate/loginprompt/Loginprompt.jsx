@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import Dialog from "@mui/material/Dialog";
@@ -12,6 +12,7 @@ import { FcGoogle } from "react-icons/fc";
 import "./loginprompt.css";
 
 export default function LoginPrompt() {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     email: "",
     pwd: "",
@@ -41,6 +42,7 @@ export default function LoginPrompt() {
       localStorage.setItem("user", data.token);
 
       alert("login success");
+      navigate("/landing");
     } catch (error) {
       console.log(error);
     }
