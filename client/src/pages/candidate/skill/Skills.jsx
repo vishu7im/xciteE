@@ -1,13 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./skills.css";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Arrow from "../../../Assets/previousicon.png";
 import Orange from "../../../Assets/orange_search_bar.png";
 import Navbar from "../../../components/navbar/Navbar";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
+import { skill } from "./skill";
+import { Stack } from "@mui/system";
+import axios from "axios";
+import { AuthContext } from "../../../context/AuthContext";
 
 const Skills = () => {
+  const { token } = AuthContext();
+  const [inputskill, setskillinput] = useState([]);
   const navigate = useNavigate();
+
+  const handleInput = (e, value) => {
+    setskillinput(value);
+  };
+
+  const submit = async () => {
+    const url = `${process.env.REACT_APP_API_KEY}/candidate/skills`;
+    try {
+      await axios.post(
+        url,
+        { skills: inputskill },
+        {
+          headers: {
+            token: token,
+          },
+        }
+      );
+
+      alert("add");
+    } catch (error) {
+      alert("err");
+    }
+  };
   return (
     <div className="container-fluid main_container">
       <div className="row">
@@ -31,39 +61,31 @@ const Skills = () => {
           <div className="row">
             <div className="col-lg-3"></div>
             <div className="col-lg-7 mb-3">
-              <div className="skills_input">
-                <input
-                  type="text"
-                  placeholder="eg.python"
-                  className="search_bar"
+              <Stack spacing={2} sx={{ width: 500 }}>
+                <Autocomplete
+                  multiple
+                  id="size-small-outlined-multi"
+                  size="small"
+                  options={skill}
+                  getOptionLabel={(option) => option}
+                  onChange={handleInput}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Skills"
+                      placeholder="Skills"
+                    />
+                  )}
                 />
-                <div className="search2_img">
-                  <img src={Orange} alt="orangebar" />
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-6 skills_div">
-                <div className="div_skills mt-5">
-                  <div className="skills_text">Web Development</div>
-                  <div className="skills_text ">Javascript</div>
-                  <div className="skills_text">Front-End</div>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-6 skills_div">
-                <div className="div_skills mt-2">
-                  <div className="skills_text">Html</div>
-                  <div className="skills_text ">Css</div>
-                </div>
-              </div>
+              </Stack>
             </div>
 
             <div className="row">
               <div className="col-lg-8 next_div"></div>
               <div className="col-lg-2">
-                <button className="btn-edu-next">next</button>
+                <button className="btn-edu-next" onClick={submit}>
+                  next
+                </button>
               </div>
             </div>
           </div>
