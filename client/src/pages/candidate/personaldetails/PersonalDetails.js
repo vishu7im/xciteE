@@ -95,7 +95,7 @@ const PersonalDetails = () => {
     <div className="container-fluid main_container">
       <div className="row">
         <div className="col-lg-3 personal-page-left">
-          <Navbar status={"Persnoal"} />
+          <Navbar status={"Personal"} />
         </div>
 
         <div className="col-lg-8">
